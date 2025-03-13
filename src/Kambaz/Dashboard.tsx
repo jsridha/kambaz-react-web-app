@@ -22,13 +22,16 @@ export default function Dashboard() {
     });
 
     const handleNewCourse = () => {
-        dispatch(
-            enroll({
-                courseID: course._id,
-                studentID: currentUser._id,
-            })
-        );
         dispatch(addCourse(course));
+        setCourse({
+            _id: uuidv4(),
+            name: "",
+            description: "",
+        });
+    };
+
+    const handleUpdateCourse = () => {
+        dispatch(updateCourse(course));
         setCourse({
             _id: uuidv4(),
             name: "",
@@ -64,7 +67,7 @@ export default function Dashboard() {
                         </Button>
                         <Button
                             className="btn btn-warning float-end me-2"
-                            onClick={() => dispatch(updateCourse(course))}
+                            onClick={handleUpdateCourse}
                             id="wd-update-course-click"
                         >
                             Update

@@ -98,9 +98,7 @@ export default function Assignments() {
                                                 | {points} pts
                                             </p>
                                         </div>
-                                        <div
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
+                                        <div>
                                             <AssignmentControlButtons
                                                 assignmentId={_id}
                                             />
